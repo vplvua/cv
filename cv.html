@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vasyl Pashko — Fullstack Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ============================================================
+      НАЛАШТУВАННЯ
+      ============================================================ */
+      :root {
+        --accent: #2e74b5;
+        --ink: #1a1a1a;
+        --ink-soft: #333;
+        --muted: #6b6b6b;
+        --rule: #d9dee3;
+
+        --font-body:
+          "Lato", "Corbel", "Candara", "Segoe UI", -apple-system, sans-serif;
+
+        --fs-name: 28pt;
+        --fs-section: 13pt;
+        --fs-body: 9.2pt;
+        --fs-small: 7.4pt;
+
+        --lh: 1.4;
+        --gap-section: 9px;
+
+        --page-w: 210mm;
+        --page-h: 297mm;
+        --page-pad-x: 16mm;
+        --page-pad-y: 13mm;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        background: #8a8f94;
+      }
+
+      body {
+        font-family: var(--font-body);
+        font-size: var(--fs-body);
+        line-height: var(--lh);
+        color: var(--ink-soft);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .sheet {
+        width: var(--page-w);
+        min-height: var(--page-h);
+        margin: 24px auto;
+        padding: var(--page-pad-y) var(--page-pad-x);
+        background: #fff;
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ================= ШАПКА ================= */
+      .masthead {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .name {
+        font-size: var(--fs-name);
+        font-weight: 300;
+        color: var(--ink);
+        letter-spacing: -0.4px;
+        line-height: 1.05;
+      }
+
+      .name .role {
+        font-size: 10.5pt;
+        font-weight: 700;
+        color: #4a4a4a;
+        letter-spacing: 0.2px;
+        margin-left: 8px;
+        white-space: nowrap;
+      }
+
+      /* Підзаголовок під іменем */
+      .tagline {
+        font-size: 9pt;
+        color: var(--accent);
+        letter-spacing: 0.3px;
+        margin-top: 3px;
+      }
+
+      .contacts {
+        font-size: 8.6pt;
+        color: var(--muted);
+        margin-top: 5px;
+      }
+
+      .socials {
+        display: flex;
+        gap: 7px;
+        flex-shrink: 0;
+        padding-top: 6px;
+      }
+
+      .socials a {
+        width: 15px;
+        height: 15px;
+        background: none;
+      }
+      .socials svg {
+        width: 15px;
+        height: 15px;
+      }
+      .socials .tg svg {
+        fill: #2aabee;
+      }
+      .socials .li svg {
+        fill: #0a66c2;
+      }
+      .socials .gh svg {
+        fill: #24292f;
+      }
+
+      /* ================= СЕКЦІЇ ================= */
+      section {
+        margin-top: var(--gap-section);
+      }
+
+      h2 {
+        font-size: var(--fs-section);
+        font-weight: 400;
+        color: var(--accent);
+        letter-spacing: 0.1px;
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: 2px;
+        margin-bottom: 4px;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .bullets li {
+        position: relative;
+        padding-left: 13px;
+        margin-bottom: 1.5px;
+      }
+      .bullets li::before {
+        content: "•";
+        position: absolute;
+        left: 2px;
+        color: var(--ink-soft);
+      }
+      .bullets b {
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      /* ================= НАВИЧКИ ================= */
+      .skills li {
+        display: grid;
+        grid-template-columns: 118px 1fr;
+        gap: 6px;
+      }
+
+      /* ================= ДОСВІД ================= */
+      .job {
+        margin-bottom: 7px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .job:last-child {
+        margin-bottom: 0;
+      }
+
+      .job-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 1px;
+      }
+
+      .job-head .who {
+        color: var(--ink);
+      }
+      .job-head .company {
+        font-weight: 700;
+      }
+      .job-head .position {
+        font-style: italic;
+      }
+
+      .job-head .dates {
+        font-size: var(--fs-small);
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      /* Пояснення формату зайнятості — знімає питання про накладання дат */
+      .tag {
+        font-size: var(--fs-small);
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        color: var(--accent);
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+        padding: 0 4px;
+        margin-left: 6px;
+        white-space: nowrap;
+      }
+
+      .tech {
+        padding-left: 13px;
+        margin-top: 1px;
+      }
+      .tech b {
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      /* Рядок сертифіката з посиланням на верифікацію */
+      .verify {
+        font-size: var(--fs-small);
+        color: var(--muted);
+      }
+
+      .version {
+        text-align: right;
+        font-size: var(--fs-small);
+        color: #a8a8a8;
+        margin-top: 10px;
+      }
+
+      .page-break {
+        break-before: page;
+        page-break-before: always;
+        height: 0;
+      }
+
+      /* ================= ДРУК ================= */
+      @page {
+        size: A4;
+        margin: var(--page-pad-y) var(--page-pad-x);
+      }
+
+      @media print {
+        html {
+          background: #fff;
+        }
+        .sheet {
+          width: auto;
+          min-height: 0;
+          margin: 0;
+          padding: 0;
+          box-shadow: none;
+        }
+        * {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        h2 {
+          break-after: avoid;
+          page-break-after: avoid;
+        }
+        p,
+        li {
+          orphans: 3;
+          widows: 3;
+        }
+        .job-head {
+          break-after: avoid;
+          page-break-after: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sheet">
+      <header class="masthead">
+        <div>
+          <div class="name">
+            Vasyl Pashko
+            <span class="role">Fullstack Engineer (Angular + Symfony)</span>
+          </div>
+          <div class="tagline">
+            Spec-Driven Development · Claude Code · AI Agents
+          </div>
+          <div class="contacts">
+            Lviv, Ukraine |
+            <a href="tel:+380676721127">+38 (067) 672 11 27</a> |
+            <a href="mailto:vasyl.pashko@gmail.com">vasyl.pashko@gmail.com</a> |
+            <a href="https://vasyl.pashko.website/">vasyl.pashko.website</a>
+          </div>
+        </div>
+
+        <div class="socials">
+          <a class="tg" href="https://t.me/vasyl_pashko" aria-label="Telegram">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M21.9 4.3 18.6 20c-.25 1.1-.9 1.37-1.83.85l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.14L17.98 6.4c.4-.36-.09-.56-.63-.2L5.78 13.4.83 11.85c-1.08-.34-1.1-1.08.22-1.6L20.5 2.7c.9-.33 1.68.2 1.4 1.6z"
+              />
+            </svg>
+          </a>
+          <a
+            class="li"
+            href="https://www.linkedin.com/in/vasyl-pashko/"
+            aria-label="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05C20.5 8.65 21 11.1 21 14.3V21h-4v-6c0-1.43-.03-3.27-2-3.27-2 0-2.3 1.56-2.3 3.17V21H9z"
+              />
+            </svg>
+          </a>
+          <a class="gh" href="https://github.com/vplvua" aria-label="GitHub">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 1.5a10.5 10.5 0 0 0-3.32 20.47c.53.1.72-.23.72-.5v-1.8c-2.92.63-3.54-1.4-3.54-1.4-.48-1.22-1.17-1.55-1.17-1.55-.95-.65.07-.64.07-.64 1.06.08 1.62 1.09 1.62 1.09.94 1.6 2.46 1.14 3.06.87.1-.68.37-1.15.67-1.41-2.33-.27-4.78-1.17-4.78-5.2 0-1.15.41-2.09 1.08-2.83-.11-.27-.47-1.34.1-2.8 0 0 .88-.28 2.89 1.08a9.9 9.9 0 0 1 5.26 0c2-1.36 2.88-1.08 2.88-1.08.58 1.46.21 2.53.11 2.8.67.74 1.08 1.68 1.08 2.83 0 4.04-2.46 4.93-4.8 5.19.38.33.72.97.72 1.96v2.9c0 .28.19.61.73.5A10.5 10.5 0 0 0 12 1.5z"
+              />
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <!-- ================= SUMMARY ================= -->
+      <section>
+        <h2>Professional Summary</h2>
+        <ul class="bullets">
+          <li>
+            Fullstack engineer with 4 years of commercial development in
+            Angular, AngularJS and React, plus co-ownership of a PHP/MySQL SaaS
+            platform running in production since 2016 and serving 300+ business
+            clients.
+          </li>
+          <li>
+            Work AI-first: Spec-Driven Development and Claude Code are my
+            everyday engineering process, not an experiment — from specification
+            and architecture to implementation, review and documentation.
+          </li>
+          <li>
+            Designed application architecture from scratch and introduced a
+            shared AI-assisted development flow into a team, applying it to a
+            full legacy-to-modern rewrite.
+          </li>
+          <li>
+            Experience across the full delivery cycle: requirements gathering,
+            payment and messaging integrations, REST API design, Docker-based
+            environments and CI/CD.
+          </li>
+          <li>
+            Comfortable owning a product end to end — deciding what to build and
+            why, not only how to code it.
+          </li>
+        </ul>
+      </section>
+
+      <!-- ================= AI — ЦЕНТРАЛЬНА СЕКЦІЯ ================= -->
+      <section>
+        <h2>AI-Assisted Engineering</h2>
+        <ul class="bullets">
+          <li>
+            <b>Spec-Driven Development (SDD)</b> as the default workflow:
+            turning a business problem into a technical specification —
+            requirements, design notes, acceptance criteria, edge cases and test
+            scenarios — before any code is generated.
+          </li>
+          <li>
+            <b>Claude Code</b> as a primary development agent in daily
+            production work: legacy code analysis, refactoring, test generation,
+            technical documentation and fast validation of product hypotheses.
+          </li>
+          <li>
+            <b>Reusable agent configuration</b> — rules, custom commands and
+            skills for agentic IDEs — so AI-assisted development is a repeatable
+            team process rather than ad-hoc prompting.
+          </li>
+          <li>
+            <b>Introduced an AI-assisted flow into a working team</b> of four
+            developers: commands, agent configuration and engineering
+            documentation kept in the repository alongside the code, applied to
+            a full legacy-to-modern application rewrite.
+          </li>
+          <li>
+            <b>Critical review of AI-generated code</b>: architecture, security
+            risks, performance and maintainability. Final accountability for the
+            code stays with the engineer, not with the tool.
+          </li>
+          <li>
+            Working knowledge of <b>MCP</b>, tool calling and LLM integration in
+            products; earlier automation background with the <b>n8n</b> low-code
+            platform (since 2023, before the current agent tooling wave).
+          </li>
+        </ul>
+      </section>
+
+      <!-- ================= SKILLS ================= -->
+      <section>
+        <h2>Skills</h2>
+        <ul class="bullets skills">
+          <li>
+            <span>AI Engineering:</span>
+            <span
+              >Claude Code | Spec-Driven Development | Agent Skills, Rules &amp;
+              Commands &amp; Subagents | MCP | Tool Calling | GitHub Copilot |
+              n8n</span
+            >
+          </li>
+          <li>
+            <span>Frontend:</span>
+            <span
+              >Angular (4–20) | AngularJS | React | React Native | TypeScript |
+              NgRx | RxJS | PrimeNG | Tailwind CSS | HTML5/CSS3/SCSS</span
+            >
+          </li>
+          <li>
+            <span>Backend:</span>
+            <span
+              >PHP 7/8 | Symfony | Node.js | Next.js | Python | REST API | OOP,
+              SOLID, DRY, KISS</span
+            >
+          </li>
+          <li><span>Databases:</span> <span>MySQL | PostgreSQL</span></li>
+          <li>
+            <span>DevOps:</span>
+            <span
+              >Docker | Linux | Bash | Ansible | AWS | ArgoCD | CI/CD | Nx
+              monorepo</span
+            >
+          </li>
+          <li>
+            <span>Practices:</span>
+            <span
+              >Agile, Scrum, Kanban | Code review | Unit testing (Jasmine/Karma)
+              | Technical documentation</span
+            >
+          </li>
+        </ul>
+      </section>
+
+      <!-- ================= ДОСВІД ================= -->
+      <section>
+        <h2>Professional Experience</h2>
+
+        <!-- TODO: підтвердь, чи бекенд Моє ОСББ саме на Symfony — якщо ні, прибери слово нижче -->
+        <div class="job">
+          <div class="job-head">
+            <div class="who">
+              <span class="company">Моє ОСББ</span> -
+              <span class="position">Co-Owner</span>
+              <span class="tag">Own product</span>
+            </div>
+            <div class="dates">2016 – Present</div>
+          </div>
+          <ul class="bullets">
+            <li>
+              Co-own a B2B SaaS platform for housing association (ОСББ)
+              accounting and management, used by
+              <b>300+ organisations</b> across Ukraine.
+            </li>
+            <li>
+              Define requirements, write specifications and set priorities
+              myself: from a customer's business problem to a production
+              release.
+            </li>
+          </ul>
+          <div class="tech">
+            <b>Technologies:</b> PHP | MySQL | Next.js | Docker
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="who">
+              <span class="company">MZ-Group</span> -
+              <span class="position">React &amp; React Native Developer</span>
+              <span class="tag">Full-time, on-site</span>
+            </div>
+            <div class="dates">September 2025 – Present</div>
+          </div>
+          <ul class="bullets">
+            <li>
+              Develop a healthcare platform: medical services for laboratories
+              and a patient-facing mobile application.
+            </li>
+            <li>
+              Built
+              <b
+                >video consultations between patients and doctors from
+                scratch</b
+              >
+              on Agora — delivered in both the web doctor's cabinet and the
+              React Native mobile app.
+            </li>
+            <li>
+              Redesigned the doctor's cabinet interface, reworking screen
+              structure and component architecture.
+            </li>
+            <li>
+              Work on long-lived production systems where reliability outweighs
+              new features: refactoring, bug fixing and incremental improvements
+              across web and mobile.
+            </li>
+          </ul>
+          <!-- TODO: чим саме зроблено відео — WebRTC напряму, чи вендор (Twilio / Agora / LiveKit / Daily)? Впиши нижче. -->
+          <div class="tech">
+            <b>Technologies:</b> React | React Native | TypeScript | REST API |
+            Git
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="who">
+              <span class="company">LeadQuizzes</span> -
+              <span class="position">Frontend Developer (Angular)</span>
+              <span class="tag">Part-time, remote</span>
+            </div>
+            <div class="dates">August 2024 – Present</div>
+          </div>
+          <ul class="bullets">
+            <li>
+              <b>Designed the architecture from scratch</b> for a full rewrite
+              of a legacy Angular 4 product onto a modern Angular 20 / Nx
+              monorepo stack, and led the migration from its first commit.
+            </li>
+            <li>
+              <b>Set up the team's AI-assisted development flow</b> for that
+              rewrite: custom commands, agent rules and engineering
+              documentation versioned in the repository next to the code, so
+              every developer worked from the same AI setup instead of ad-hoc
+              prompting.
+            </li>
+            <li>
+              Mentored three junior developers through the migration — defined
+              conventions, reviewed their work and unblocked them.
+            </li>
+            <li>
+              Maintain a legacy <b>PHP 7 / Symfony 3</b> backend: adjust
+              endpoints and data contracts so new frontend functionality can
+              ship without a full backend rewrite.
+            </li>
+            <li>
+              Resolve security vulnerabilities and dependency upgrades, and
+              troubleshoot CI/CD and ArgoCD deployment issues.
+            </li>
+          </ul>
+          <div class="tech">
+            <b>Technologies:</b> Angular 4–20 | Nx | TypeScript | RxJS |
+            Transloco | PHP 7 | Symfony 3 | AWS | ArgoCD | BitBucket | Jira
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="who">
+              <span class="company">Data Ladder</span> -
+              <span class="position">Frontend Developer</span>
+            </div>
+            <div class="dates">January 2025 – May 2025</div>
+          </div>
+          <ul class="bullets">
+            <li>
+              Built a frontend from scratch on Angular 17 with PrimeNG and NgRx,
+              including application architecture decisions.
+            </li>
+            <li>Covered functionality with unit tests in Jasmine/Karma.</li>
+          </ul>
+          <div class="tech">
+            <b>Technologies:</b> Angular 17 | PrimeNG | NgRx | RxJS | Azure Git
+            | Jasmine/Karma
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="who">
+              <span class="company">GrainTrack</span> -
+              <span class="position">Frontend Developer</span>
+            </div>
+            <div class="dates">August 2023 – August 2024</div>
+          </div>
+          <ul class="bullets">
+            <li>
+              Developed features for a CTRM (commodity trading and risk
+              management) system on AngularJS, and contributed to backend tasks
+              to deliver fullstack solutions.
+            </li>
+            <li>
+              Led integrations between GrainTrack and client systems end to end
+              using the n8n low-code platform.
+            </li>
+            <li>
+              Handled DevOps work: server administration, bash scripting, Docker
+              and Ansible deployments; resolved critical backup and disk-space
+              issues that were causing downtime.
+            </li>
+            <li>
+              Onboarded new team members and recorded a series of n8n tutorials
+              that enabled the support team to handle simple integrations
+              without developers.
+            </li>
+          </ul>
+          <div class="tech">
+            <b>Technologies:</b> Angular | AngularJS | RxJS | Ionic | Storybook
+            | Figma | n8n | Linux, Bash, Docker, Ansible
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="who">
+              <span class="company">SoftServe</span> -
+              <span class="position">Project Intern, Web UI Developer</span>
+            </div>
+            <div class="dates">September 2022 – February 2023</div>
+          </div>
+          <ul class="bullets">
+            <li>
+              Angular developer on GreenCity, a gamified eco-lifestyle product;
+              worked in a 7-person frontend team alongside QA, backend
+              developers and business analysts under Scrum.
+            </li>
+          </ul>
+          <div class="tech">
+            <b>Technologies:</b> Angular 8 | TypeScript | RxJS | Angular
+            Material | Jasmine/Karma | GitHub
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="who">
+              <span class="company">Wybir Ukraine</span> -
+              <span class="position">Regional Sales Manager</span>
+              <span class="tag">Pre-IT career</span>
+            </div>
+            <div class="dates">2013 – 2023</div>
+          </div>
+          <ul class="bullets">
+            <li>
+              Opened and ran the company's western-region office from scratch in
+              B2B wholesale; grew sales every year and won public tenders with
+              the National Bank of Ukraine, Energoatom and other major state
+              organisations. This is where my habit of starting from the
+              customer's problem comes from.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Розрив другої сторінки. -->
+      <!-- <div class="page-break"></div> -->
+
+      <!-- ================= ОСВІТА ================= -->
+      <section>
+        <h2>AI &amp; Engineering Certifications</h2>
+        <ul class="bullets">
+          <li>
+            <b>Claude Code in Action</b> — Anthropic Academy, January 2026
+            <span class="verify">· verify.skilljar.com/c/a4fhoud88zgk</span>
+          </li>
+          <li>
+            <b>Introduction to Agent Skills</b> — Anthropic Academy, July 2026
+            <span class="verify">· verify.skilljar.com/c/y9fb7dbzby69</span>
+          </li>
+          <li>
+            <b>Agentic Engineering for New Projects</b> — fwdays, July 2026
+            <span class="verify"
+              >·
+              https://study.fwdays.com/uk/verifycertificate/?uuid=c21d7df4-815f-40e7-88f0-291ced8bb394</span
+            >
+          </li>
+          <li>
+            <b>Rules, Commands and Skills for Agentic IDE</b> — fwdays, January
+            2026
+            <span class="verify"
+              >·
+              https://study.fwdays.com/uk/verifycertificate/?uuid=c70929fe-f329-4978-8060-e6b7ac3d429f</span
+            >
+          </li>
+          <li>
+            DevOps and Kubernetes. Practical Intensive+ — GlobalLogic &amp;
+            Prometheus, August 2024
+          </li>
+          <li>
+            Linux Fundamentals — The Linux Foundation / Prometheus, March 2024
+          </li>
+          <li>
+            ScriptJedi42: advanced JavaScript — OOP, functional and asynchronous
+            programming, August 2022
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Education &amp; Languages</h2>
+        <ul class="bullets">
+          <li>
+            Master's Degree, Management Information Systems, Ivan Franko
+            National University of Lviv, Ukraine — 2000
+          </li>
+          <li>
+            English: Professional Working | Polish: Full Professional |
+            Ukrainian: Native
+          </li>
+        </ul>
+      </section>
+
+      <div class="version">v4.0</div>
+    </div>
+  </body>
+</html>
