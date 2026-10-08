@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Vasyl Pashko — Fullstack Engineer</title>
+    <title>Vasyl Pashko — Fullstack Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -84,13 +84,17 @@
         line-height: 1.05;
       }
 
-      .name .role {
+      .role {
         font-size: 10.5pt;
         font-weight: 700;
         color: #4a4a4a;
         letter-spacing: 0.2px;
-        margin-left: 8px;
-        white-space: nowrap;
+        margin-top: 3px;
+      }
+
+      /* Вступний абзац у Summary */
+      .lead {
+        margin-bottom: 2px;
       }
 
       /* Підзаголовок під іменем */
@@ -171,7 +175,7 @@
       /* ================= НАВИЧКИ ================= */
       .skills li {
         display: grid;
-        grid-template-columns: 118px 1fr;
+        grid-template-columns: 128px 1fr;
         gap: 6px;
       }
 
@@ -294,18 +298,22 @@
     <div class="sheet">
       <header class="masthead">
         <div>
-          <div class="name">
-            Vasyl Pashko
-            <span class="role">Fullstack Engineer (Angular + Symfony)</span>
+          <div class="name">Vasyl Pashko</div>
+          <div class="role">
+            Fullstack Developer (React / Next.js · Node.js / NestJS ·
+            TypeScript · Angular)
           </div>
           <div class="tagline">
-            Spec-Driven Development · Claude Code · AI Agents
+            AI-Assisted Engineering · Spec-Driven Development · Claude Code
           </div>
           <div class="contacts">
-            Lviv, Ukraine |
+            Lviv, Ukraine (open to remote) |
             <a href="tel:+380676721127">+38 (067) 672 11 27</a> |
             <a href="mailto:vasyl.pashko@gmail.com">vasyl.pashko@gmail.com</a> |
-            <a href="https://vasyl.pashko.website/">vasyl.pashko.website</a>
+            <a href="https://vasyl.pashko.website/">vasyl.pashko.website</a> |
+            <a href="https://www.linkedin.com/in/vasyl-pashko/"
+              >linkedin.com/in/vasyl-pashko</a
+            >
           </div>
         </div>
 
@@ -341,70 +349,59 @@
       <!-- ================= SUMMARY ================= -->
       <section>
         <h2>Professional Summary</h2>
+        <p class="lead">
+          Fullstack developer with 4 years of commercial experience: React and
+          React Native on a production healthcare platform, Node.js/NestJS for
+          new services of my own SaaS product, and a strong Angular background.
+        </p>
         <ul class="bullets">
           <li>
-            Fullstack engineer with 4 years of commercial development in
-            Angular, AngularJS and React, plus co-ownership of a PHP/MySQL SaaS
-            platform running in production since 2016 and serving 300+ business
-            clients.
+            Currently build a <b>healthcare platform</b> where patient data,
+            roles and access levels matter as much as features. I'm used to
+            working in domains where security and code quality are not
+            optional.
           </li>
           <li>
-            Work AI-first: Spec-Driven Development and Claude Code are my
-            everyday engineering process, not an experiment — from specification
-            and architecture to implementation, review and documentation.
+            Co-own a <b>B2B SaaS platform serving 300+ organisations</b> since
+            2016. New services there are built on NestJS with TypeScript,
+            including role-based access control, so I own both the API and the
+            UI that consumes it.
           </li>
           <li>
-            Designed application architecture from scratch and introduced a
-            shared AI-assisted development flow into a team, applying it to a
-            full legacy-to-modern rewrite.
+            Designed application architecture from scratch, led a full
+            legacy-to-modern rewrite and mentored junior developers.
           </li>
           <li>
-            Experience across the full delivery cycle: requirements gathering,
-            payment and messaging integrations, REST API design, Docker-based
-            environments and CI/CD.
-          </li>
-          <li>
-            Comfortable owning a product end to end — deciding what to build and
-            why, not only how to code it.
+            <b>AI-first workflow:</b> Claude Code and Spec-Driven Development
+            are part of my daily process, with critical review of every line
+            the agent produces, tests included.
           </li>
         </ul>
       </section>
 
-      <!-- ================= AI — ЦЕНТРАЛЬНА СЕКЦІЯ ================= -->
+      <!-- ================= AI ================= -->
       <section>
         <h2>AI-Assisted Engineering</h2>
         <ul class="bullets">
           <li>
-            <b>Spec-Driven Development (SDD)</b> as the default workflow:
-            turning a business problem into a technical specification —
-            requirements, design notes, acceptance criteria, edge cases and test
-            scenarios — before any code is generated.
+            <b>Spec-Driven Development</b> as the default: requirements, API
+            contracts, acceptance criteria and edge cases are written down
+            before any code is generated.
           </li>
           <li>
-            <b>Claude Code</b> as a primary development agent in daily
-            production work: legacy code analysis, refactoring, test generation,
-            technical documentation and fast validation of product hypotheses.
+            <b>Claude Code</b> as a primary agent in production work: legacy
+            code analysis, refactoring, test generation and technical
+            documentation.
           </li>
           <li>
-            <b>Reusable agent configuration</b> — rules, custom commands and
-            skills for agentic IDEs — so AI-assisted development is a repeatable
-            team process rather than ad-hoc prompting.
+            <b>Reusable agent setup</b> (rules, commands, skills, subagents)
+            versioned in the repository, so AI-assisted development is a team
+            process rather than ad-hoc prompting. Rolled this out in a team of
+            four developers.
           </li>
           <li>
-            <b>Introduced an AI-assisted flow into a working team</b> of four
-            developers: commands, agent configuration and engineering
-            documentation kept in the repository alongside the code, applied to
-            a full legacy-to-modern application rewrite.
-          </li>
-          <li>
-            <b>Critical review of AI-generated code</b>: architecture, security
-            risks, performance and maintainability. Final accountability for the
-            code stays with the engineer, not with the tool.
-          </li>
-          <li>
-            Working knowledge of <b>MCP</b>, tool calling and LLM integration in
-            products; earlier automation background with the <b>n8n</b> low-code
-            platform (since 2023, before the current agent tooling wave).
+            <b>The engineer stays accountable:</b> I review AI-generated code
+            for architecture, security, performance and maintainability.
           </li>
         </ul>
       </section>
@@ -414,41 +411,56 @@
         <h2>Skills</h2>
         <ul class="bullets skills">
           <li>
-            <span>AI Engineering:</span>
-            <span
-              >Claude Code | Spec-Driven Development | Agent Skills, Rules &amp;
-              Commands &amp; Subagents | MCP | Tool Calling | GitHub Copilot |
-              n8n</span
-            >
-          </li>
-          <li>
             <span>Frontend:</span>
             <span
-              >Angular (4–20) | AngularJS | React | React Native | TypeScript |
-              NgRx | RxJS | PrimeNG | Tailwind CSS | HTML5/CSS3/SCSS</span
+              >React | React Native / Expo | Next.js | TypeScript | Zustand |
+              Angular (4–20) | AngularJS | RxJS | NgRx | PrimeNG | Tailwind CSS
+              | HTML5/CSS3/SCSS</span
             >
           </li>
           <li>
             <span>Backend:</span>
             <span
-              >PHP 7/8 | Symfony | Node.js | Next.js | Python | REST API | OOP,
-              SOLID, DRY, KISS</span
+              >Node.js | NestJS | REST API design | PHP 8 / Symfony |
+              Python</span
             >
           </li>
-          <li><span>Databases:</span> <span>MySQL | PostgreSQL</span></li>
+          <li>
+            <span>Databases:</span>
+            <span>MySQL | PostgreSQL | Redis (Upstash)</span>
+          </li>
+          <li>
+            <span>Security &amp; access:</span>
+            <span
+              >Role-based access control (RBAC) | Role-based
+              authentication</span
+            >
+          </li>
+          <li>
+            <span>Testing &amp; quality:</span>
+            <span
+              >Unit tests (Jest, Jasmine/Karma) | Spec-driven acceptance
+              criteria | Code review | OOP, SOLID, DRY, KISS</span
+            >
+          </li>
           <li>
             <span>DevOps:</span>
             <span
-              >Docker | Linux | Bash | Ansible | AWS | ArgoCD | CI/CD | Nx
-              monorepo</span
+              >Docker | Linux | Bash | CI/CD | AWS | ArgoCD | Ansible | Nx
+              monorepo | Vercel</span
+            >
+          </li>
+          <li>
+            <span>AI Engineering:</span>
+            <span
+              >Claude Code | Spec-Driven Development | Agent Skills, Rules,
+              Commands &amp; Subagents | MCP | Tool Calling | GitHub Copilot |
+              n8n</span
             >
           </li>
           <li>
             <span>Practices:</span>
-            <span
-              >Agile, Scrum, Kanban | Code review | Unit testing (Jasmine/Karma)
-              | Technical documentation</span
-            >
+            <span>Agile, Scrum, Kanban | Technical documentation</span>
           </li>
         </ul>
       </section>
@@ -456,33 +468,6 @@
       <!-- ================= ДОСВІД ================= -->
       <section>
         <h2>Professional Experience</h2>
-
-        <!-- TODO: підтвердь, чи бекенд Моє ОСББ саме на Symfony — якщо ні, прибери слово нижче -->
-        <div class="job">
-          <div class="job-head">
-            <div class="who">
-              <span class="company">Моє ОСББ</span> -
-              <span class="position">Co-Owner</span>
-              <span class="tag">Own product</span>
-            </div>
-            <div class="dates">2016 – Present</div>
-          </div>
-          <ul class="bullets">
-            <li>
-              Co-own a B2B SaaS platform for housing association (ОСББ)
-              accounting and management, used by
-              <b>300+ organisations</b> across Ukraine.
-            </li>
-            <li>
-              Define requirements, write specifications and set priorities
-              myself: from a customer's business problem to a production
-              release.
-            </li>
-          </ul>
-          <div class="tech">
-            <b>Technologies:</b> PHP | MySQL | Next.js | Docker
-          </div>
-        </div>
 
         <div class="job">
           <div class="job-head">
@@ -495,32 +480,78 @@
           </div>
           <ul class="bullets">
             <li>
-              Develop a healthcare platform: medical services for laboratories
-              and a patient-facing mobile application.
+              Develop a healthcare platform with medical services for
+              laboratories, a web doctor's cabinet and a patient-facing mobile
+              app.
             </li>
             <li>
               Built
-              <b
-                >video consultations between patients and doctors from
-                scratch</b
-              >
-              on Agora — delivered in both the web doctor's cabinet and the
-              React Native mobile app.
+              <b>patient–doctor video consultations from scratch</b> on Agora,
+              including a lobby/waiting-room flow, delivered in both the web
+              cabinet and the React Native app.
             </li>
             <li>
-              Redesigned the doctor's cabinet interface, reworking screen
-              structure and component architecture.
+              Implemented <b>role-based authentication</b> and patient profile
+              management in the doctor's mobile app (React Native, Zustand,
+              Expo Router).
             </li>
             <li>
-              Work on long-lived production systems where reliability outweighs
-              new features: refactoring, bug fixing and incremental improvements
-              across web and mobile.
+              Redesigned the doctor's cabinet: reworked the screen structure and
+              component architecture into reusable React components.
+            </li>
+            <li>
+              Work on a long-lived production system handling sensitive medical
+              data: refactoring, bug fixing and incremental improvements across
+              web and mobile.
             </li>
           </ul>
-          <!-- TODO: чим саме зроблено відео — WebRTC напряму, чи вендор (Twilio / Agora / LiveKit / Daily)? Впиши нижче. -->
           <div class="tech">
-            <b>Technologies:</b> React | React Native | TypeScript | REST API |
-            Git
+            <b>Technologies:</b> React | React Native | Expo | TypeScript |
+            Zustand | Expo Router | REST API | Agora SDK | Git/GitLab
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="who">
+              <span class="company">Моє ОСББ</span> -
+              <span class="position">Co-Owner &amp; Fullstack Developer</span>
+              <span class="tag">Own product</span>
+            </div>
+            <div class="dates">2016 – Present</div>
+          </div>
+          <ul class="bullets">
+            <li>
+              B2B SaaS for housing association accounting and management, used
+              by <b>300+ organisations</b> across Ukraine.
+            </li>
+            <li>
+              Build new services on <b>NestJS with TypeScript</b> end to end:
+              API design, business logic, and role-based access control with
+              different permission levels for different user roles.
+            </li>
+            <li>
+              Unit tests are a standard part of every new service. They are
+              generated against the acceptance criteria from the spec and
+              reviewed before merge.
+            </li>
+            <li>
+              Integrated payments (Portmone) and bank payment registries
+              (PrivatBank), plus Viber Business notifications.
+            </li>
+            <li>
+              Multi-tenant delivery: management companies get a separately
+              deployed instance with their own database and a white-label
+              resident app.
+            </li>
+            <li>
+              Own the product end to end: from a customer's business problem to
+              specification, architecture and production release.
+            </li>
+          </ul>
+          <div class="tech">
+            <b>Technologies:</b> NestJS | Node.js | TypeScript | PHP | MySQL |
+            Docker | React Native
           </div>
         </div>
 
@@ -531,38 +562,37 @@
               <span class="position">Frontend Developer (Angular)</span>
               <span class="tag">Part-time, remote</span>
             </div>
-            <div class="dates">August 2024 – Present</div>
+            <div class="dates">August 2024 – August 2026</div>
           </div>
           <ul class="bullets">
             <li>
-              <b>Designed the architecture from scratch</b> for a full rewrite
-              of a legacy Angular 4 product onto a modern Angular 20 / Nx
-              monorepo stack, and led the migration from its first commit.
+              <b>Designed the architecture</b> for a full rewrite of a legacy
+              Angular 4 product onto an Angular 20 / Nx monorepo stack and led
+              the migration from its first commit.
             </li>
             <li>
               <b>Set up the team's AI-assisted development flow</b> for that
               rewrite: custom commands, agent rules and engineering
-              documentation versioned in the repository next to the code, so
-              every developer worked from the same AI setup instead of ad-hoc
-              prompting.
+              documentation versioned next to the code, so every developer
+              worked from the same AI setup.
             </li>
             <li>
-              Mentored three junior developers through the migration — defined
+              Mentored three junior developers through the migration: defined
               conventions, reviewed their work and unblocked them.
             </li>
             <li>
-              Maintain a legacy <b>PHP 7 / Symfony 3</b> backend: adjust
-              endpoints and data contracts so new frontend functionality can
+              Maintained a legacy <b>PHP 7 / Symfony 3</b> backend: adjusted
+              endpoints and data contracts so new frontend functionality could
               ship without a full backend rewrite.
             </li>
             <li>
-              Resolve security vulnerabilities and dependency upgrades, and
-              troubleshoot CI/CD and ArgoCD deployment issues.
+              Resolved security vulnerabilities and dependency upgrades;
+              troubleshot CI/CD and ArgoCD deployment issues.
             </li>
           </ul>
           <div class="tech">
             <b>Technologies:</b> Angular 4–20 | Nx | TypeScript | RxJS |
-            Transloco | PHP 7 | Symfony 3 | AWS | ArgoCD | BitBucket | Jira
+            Transloco | PHP 7 | Symfony 3 | AWS | ArgoCD | Bitbucket | Jira
           </div>
         </div>
 
@@ -577,7 +607,7 @@
           <ul class="bullets">
             <li>
               Built a frontend from scratch on Angular 17 with PrimeNG and NgRx,
-              including application architecture decisions.
+              including the application architecture decisions.
             </li>
             <li>Covered functionality with unit tests in Jasmine/Karma.</li>
           </ul>
@@ -598,16 +628,16 @@
           <ul class="bullets">
             <li>
               Developed features for a CTRM (commodity trading and risk
-              management) system on AngularJS, and contributed to backend tasks
-              to deliver fullstack solutions.
+              management) system on Angular/AngularJS and contributed to backend
+              tasks to deliver fullstack solutions.
             </li>
             <li>
               Led integrations between GrainTrack and client systems end to end
               using the n8n low-code platform.
             </li>
             <li>
-              Handled DevOps work: server administration, bash scripting, Docker
-              and Ansible deployments; resolved critical backup and disk-space
+              Handled DevOps work: server administration, Bash scripting, Docker
+              and Ansible deployments. Resolved critical backup and disk-space
               issues that were causing downtime.
             </li>
             <li>
@@ -618,7 +648,7 @@
           </ul>
           <div class="tech">
             <b>Technologies:</b> Angular | AngularJS | RxJS | Ionic | Storybook
-            | Figma | n8n | Linux, Bash, Docker, Ansible
+            | Figma | n8n | Linux | Bash | Docker | Ansible
           </div>
         </div>
 
@@ -632,8 +662,8 @@
           </div>
           <ul class="bullets">
             <li>
-              Angular developer on GreenCity, a gamified eco-lifestyle product;
-              worked in a 7-person frontend team alongside QA, backend
+              Angular developer on GreenCity, a gamified eco-lifestyle product.
+              Worked in a 7-person frontend team alongside QA, backend
               developers and business analysts under Scrum.
             </li>
           </ul>
@@ -654,9 +684,9 @@
           </div>
           <ul class="bullets">
             <li>
-              Opened and ran the company's western-region office from scratch in
-              B2B wholesale; grew sales every year and won public tenders with
-              the National Bank of Ukraine, Energoatom and other major state
+              Opened and ran the company's western-region B2B office from
+              scratch. Grew sales every year and won public tenders with the
+              National Bank of Ukraine, Energoatom and other major state
               organisations. This is where my habit of starting from the
               customer's problem comes from.
             </li>
@@ -667,7 +697,19 @@
       <!-- Розрив другої сторінки. -->
       <!-- <div class="page-break"></div> -->
 
-      <!-- ================= ОСВІТА ================= -->
+      <!-- ================= SIDE PROJECTS ================= -->
+      <section>
+        <h2>Side Projects</h2>
+        <ul class="bullets">
+          <li>
+            <b>Bank account monitoring bot:</b> Telegram bot on Next.js
+            serverless functions deployed to Vercel, with Upstash Redis for
+            state.
+          </li>
+        </ul>
+      </section>
+
+      <!-- ================= СЕРТИФІКАТИ ================= -->
       <section>
         <h2>AI &amp; Engineering Certifications</h2>
         <ul class="bullets">
@@ -683,7 +725,7 @@
             <b>Agentic Engineering for New Projects</b> — fwdays, July 2026
             <span class="verify"
               >·
-              https://study.fwdays.com/uk/verifycertificate/?uuid=c21d7df4-815f-40e7-88f0-291ced8bb394</span
+              study.fwdays.com/uk/verifycertificate/?uuid=c21d7df4-815f-40e7-88f0-291ced8bb394</span
             >
           </li>
           <li>
@@ -691,7 +733,7 @@
             2026
             <span class="verify"
               >·
-              https://study.fwdays.com/uk/verifycertificate/?uuid=c70929fe-f329-4978-8060-e6b7ac3d429f</span
+              study.fwdays.com/uk/verifycertificate/?uuid=c70929fe-f329-4978-8060-e6b7ac3d429f</span
             >
           </li>
           <li>
@@ -702,19 +744,25 @@
             Linux Fundamentals — The Linux Foundation / Prometheus, March 2024
           </li>
           <li>
-            ScriptJedi42: advanced JavaScript — OOP, functional and asynchronous
-            programming, August 2022
+            ScriptJedi42: advanced JavaScript (OOP, functional and asynchronous
+            programming), August 2022
           </li>
         </ul>
       </section>
 
       <section>
-        <h2>Education &amp; Languages</h2>
+        <h2>Education</h2>
         <ul class="bullets">
           <li>
             Master's Degree, Management Information Systems, Ivan Franko
-            National University of Lviv, Ukraine — 2000
+            National University of Lviv, Ukraine, 2000
           </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Languages</h2>
+        <ul class="bullets">
           <li>
             English: Professional Working | Polish: Full Professional |
             Ukrainian: Native
@@ -722,7 +770,7 @@
         </ul>
       </section>
 
-      <div class="version">v4.0</div>
+      <div class="version">v5.0</div>
     </div>
   </body>
 </html>
